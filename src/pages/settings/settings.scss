@@ -1,0 +1,9 @@
+@import '../../assets/global.scss';
+
+.settings-container {
+    @include background-container();
+
+    h1 {
+        font-size: 4rem;
+    }
+}

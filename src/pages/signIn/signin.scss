@@ -1,0 +1,201 @@
+@import '../../assets/global.scss';
+
+.signin-container {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: $white;
+    @include flexCenterCollumn();    
+
+    .error-modal {
+        width: 50vw;
+        padding: 22px 20px;
+        background: linear-gradient(150deg, #444a43 40%, #353a34);
+        position: absolute;
+        top: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        @include flexStart();
+        border-radius: 5px;
+        align-items: center;
+        gap: 20px;
+
+        img {
+            width: 20px;
+        }
+
+        p {
+            color: $white;
+        }
+    }
+    
+    .signin {
+        position: relative;
+        width: 55vw;
+        height: 65vh;
+        padding: 10px;
+        background-color: $white;
+        border-radius: 15px;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+        @include flexSpaceBetween();
+        overflow: hidden;
+
+        .toggle-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1000;
+
+            .toggle {
+                background-color: #2d2f2c;
+                height: 100%;
+                background: linear-gradient(110deg, #444a43 30%, #2d2f2c);
+                position: relative;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                z-index: 200;
+
+                .toggle-panel{
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    @include flexCenterCollumn();
+                    gap: 40px;
+                    padding: 0 30px;
+                    text-align: center;
+
+                    p {
+                        color: $white
+                    }
+
+                    button {
+                        padding: 10px;
+                        width: 40%;
+                        background-color: transparent;
+                        color: $white;
+                        text-transform: capitalize;
+                        font-weight: 500;
+                        border: 1px solid #f5f5f5;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        transition: all 0.1 ease-in-out;
+                    }
+
+                    button:hover {
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+
+        form {
+            @include flexSpaceBetween();
+            gap: 20px;
+            flex-direction: column;
+            width: 50%;
+            background-color: $white;
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .google {
+                @include flexCenter();
+                gap: 10px;
+                padding: 10px;
+                width: 80%;
+                border-radius: 10px;
+                border: 1px solid $accent;
+                cursor: pointer;
+                opacity: 0.8;
+                transition: all 0.1s ease-in-out;
+
+            }
+
+            .google:hover {
+                border-color: rgb(165, 165, 165);
+            }
+
+            .devider {
+                width: 70%;
+                @include flexCenter();
+                gap: 15px;
+    
+                .line {
+                    width: 100%;
+                    height: 1px;
+                    background-color: $accentgreen;
+                }
+            }
+
+            .inputs {
+                @include flexCenterCollumn();
+                gap: 20px;
+                width: 80%;
+
+                .inputGroup {
+                    width: 100%;
+                    position: relative;
+    
+                    input {
+                        width: 100%;
+                        border: 1px solid $accentgreen;
+                        padding: 12px 12px 12px 35px;
+                        border-radius: 8px;
+                    }
+    
+                    .img-labels {
+                        position: absolute;
+                        top: 50%;
+                        left: 10px;
+                        height: 22px;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+            
+            .btn-password {
+                width: 80%;
+                @include flexCenterCollumn();
+                gap: 5px;
+
+                button {
+                    padding: 12px;
+                    width: 100%;
+                    background-color: $accentgreen;
+                    color: $white;
+                    text-transform: capitalize;
+                    font-weight: 500;
+                    font-size: 0.9rem;
+                    cursor: pointer;
+                    border: none;
+                    border-radius: 8px;
+                    transition: transform 0.2 ease-in-out;
+                }
+
+                button:hover {
+                    opacity: 0.92;
+                }
+
+                button:active {
+                    opacity: 0.88;
+                }
+
+                .forgot-password {
+                    font-size: 0.9rem;
+                    font-weight: 300;
+                    opacity: 0.75;
+                    cursor: pointer;
+                    transition: all 0.2 ease-in-out;
+                }
+
+                .forgot-password:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

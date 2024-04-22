@@ -1,0 +1,1 @@
+'Dzēsts privātuma nolūkiem'

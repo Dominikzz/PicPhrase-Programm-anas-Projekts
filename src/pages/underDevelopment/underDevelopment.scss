@@ -1,0 +1,99 @@
+@import '../../assets/global.scss';
+
+.container {
+    @include background-container();
+    @include flexSpaceBetween();
+    gap: 50px;
+
+    .modal {
+        @include flexStart();
+        align-items: center;
+        gap: 15px;
+        width: 70vw;
+        padding: 25px 20px;
+        background-color: $green;
+        position: absolute;
+        border-radius: 5px;
+        color: $white;
+        font-weight: 600;
+
+        img {
+            width: 25px;
+        }
+    }
+    
+    .content {
+        @include flexCenterCollumn();
+        text-align: center;
+        padding: 10px 25px;
+        gap: 20px;
+        margin-top: 30px;
+
+        img {
+            width: clamp(100px, 35vw, 250px);
+        }
+    
+        h1 {
+            font-family: 'Azo';
+            font-size: clamp(1.2rem, 10vw, 4rem);
+        }
+
+        strong {
+            font-weight: 700;
+        }
+    }
+
+    .news-letter {
+        @include flexCenterCollumn();
+        width: 100vw;
+        background-color: $green;
+        min-height: fit-content;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+        padding: 10px 25px;
+        
+
+        p, label {
+            color: $white;
+        }
+
+        p {
+            font-size: clamp(1.2rem, 10vw, 1.7rem);
+            text-align: center;
+            padding: 20px 0 0 0 ;
+        }
+
+        strong {
+            color: $orange;
+        }
+
+        .pair {
+            @include flexCollumn();
+            margin-top: 50px;
+            gap: 5px;
+    
+            input {
+                width: clamp(150px, 75vw, 500px);
+                border: 1px solid $green;
+                padding: 14px 14px;
+                border-radius: 5px;
+            }
+        }
+    
+        button {
+            margin: 20px 0 50px;
+            padding: 12px 10px;
+            width: clamp(150px, 75vw, 500px);
+            background-color: $accentgreen;
+            border: none;
+            border-radius: 5px;
+            color: $white;
+            font-weight: 600;
+            transition: 0.1s ease-in-out;
+            cursor: pointer;
+        }
+    
+        button:active {
+            transform: scale(0.97);
+        }
+    }
+}

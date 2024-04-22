@@ -1,0 +1,147 @@
+
+@font-face {
+    font-family: 'Exo2';
+    src: local('Exo2'),
+        url('./fonts/Exo2-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Exo2-Black';
+    src: local('Exo2-Black'),
+        url('./fonts/Exo2-Black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Azo';
+    src: local('Azo'),
+        url('./fonts/Azo-Sans-Uber-W01-Regular.ttf') format('truetype');
+}
+
+$orange: #eb7137;
+$white: #f5f5f5;
+$green: #2d2f2c;
+$accentgreen: #444a43;
+$accent: #dadada;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Exo2';
+}
+
+h1 {
+    color: $orange;
+    font-family: 'Azo';
+    text-transform: uppercase;
+}
+
+h2 {
+    color: $green;
+    font-family: 'Exo2-Black';
+    text-transform: uppercase;
+}
+
+p, a, input, button, label, span{
+    color: $green;
+}
+
+input {
+    border-radius: 2px;
+    border: 1px solid $white;
+    background-color: $white;
+    outline: none;
+}
+
+@mixin border {
+    border: solid 1px $green;
+    border-radius: 2px;
+}
+
+@mixin flexCenterCollumn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin flexSpaceBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexStart {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
+@mixin flexEnd {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+@mixin flexCollumn {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin background-container {
+    min-height: 100vh;
+    min-width: 100vw;
+    @include flexCenterCollumn();
+    background-color: $white;
+}
+
+.logo-name {
+    font-family: 'Azo' !important;
+}
+
+.submit {
+    padding: 10px;
+    width: 100%;
+    background-color: $orange !important;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.inactive {
+    display: none !important;
+}
+
+.profile-picture {
+    width: 150px;
+    background-color: $accent;
+    border-radius: 50%;
+    transition: 0.1 ease-in-out;
+    cursor: pointer;
+}
+
+
+.error-message {
+    color: rgb(255, 0, 0);
+    font-weight: 600;
+}
+
+.error {
+    @include flexCenterCollumn();
+    margin-top: 10px;
+
+    .error-text {
+        color: $orange !important;
+    }
+    
+    img {
+        width: 35px;
+    }
+}

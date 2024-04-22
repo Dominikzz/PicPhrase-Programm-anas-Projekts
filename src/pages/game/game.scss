@@ -1,0 +1,224 @@
+@import '../../assets/global.scss';
+
+.game-container {
+    width: 100vw;
+    height: 100vh;
+    @include flexCenter();
+    background-color: $white;
+
+    .pause-screen {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 100;
+        @include flexCenterCollumn();
+
+        h1 {
+            font-size: 8rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.508);
+            cursor: default;
+        }
+    }
+
+    .game-over-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $white;
+        z-index: 100;
+        @include flexCenter();
+        overflow: hidden;
+
+        .background-logo-left {
+            position: absolute;
+            z-index: 105;
+            top: -40px;
+            left: -40px;
+            width: 35vw;
+        }
+
+        .background-logo-right {
+            position: absolute;
+            z-index: 105;
+            bottom: -40px;
+            right: -40px;
+            width: 35vw;
+        }
+
+        .game-over {
+            @include flexCenterCollumn();
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+            z-index: 110;
+            gap: 30px;
+            width: 50%;
+            height: 50%;
+            background-color: $green;
+            border-radius: 10px;
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            .game-stats {
+                @include flexCenterCollumn();
+                gap: 10px;
+
+                p {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    color: $white;
+                }
+            }
+
+            button {
+                width: clamp(250px, 20vw, 400px);
+                padding: 10px 20px;
+                background-color: $orange;
+                border: none;
+                border-radius: 5px;
+                color: $white;
+                font-size: 1.2rem;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .game-header {
+        @include flexSpaceBetween();
+        width: 100%;
+        padding: 20px;
+        position: absolute;
+        top: 0;
+
+        img {
+            width: 45px;
+            cursor: pointer;
+        }
+    }
+
+    .game-content {
+        @include flexCenterCollumn();
+        padding: 0 0 100px 0;
+        gap: 40px;
+
+        h1 {
+            font-size: 4rem;
+        }
+
+        img {
+            width: 400px;
+            height: 400px;
+            border-radius: 5px;
+            box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+        }
+
+        .game-options {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            grid-template-rows: repeat(1, 1fr);
+            gap: 20px; 
+
+            .option {
+                @include flexCenter();
+                text-align: center;
+                width: 250px;
+                height: 100px;
+                background-color: $orange;
+                border-radius: 5px;
+                cursor: pointer;
+                
+                p {
+                    color: $white;
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    text-transform: capitalize;
+                }
+            }
+
+            .correct {
+                background-color: #26C000;
+            }
+
+            .incorrect {
+                background-color: #d60c20;
+            }
+        }
+    }
+
+    .game-footer {
+        @include flexSpaceBetween();
+        width: 90%;
+        padding: 20px;
+        border: 2px solid $green;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 20px;
+
+        img {
+            position: absolute;
+            right: 50%;
+            transform: translateX(50%);
+        }
+
+        p {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    }
+}
+
+
+.game-loader-container {
+    @include background-container();
+
+    img {
+        width: 15vw;
+    }
+
+    h1 {
+        font-size: 6rem;
+    }
+
+    p {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    button {
+        width: 15vw;
+        padding: 10px 20px;
+        background-color: $green;
+        border: none;
+        border-radius: 5px;
+        color: $white;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 20px 0;
+        cursor: pointer;
+    }
+
+
+    .info {
+        @include flexCenter();
+        position: absolute;
+        bottom: 30px;
+        gap: 15px;
+
+        img {
+            width: 40px;
+        }
+
+        span {
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+    }
+
+}

@@ -1,0 +1,44 @@
+@import '../../assets/global.scss';
+
+.profile-container {
+    @include background-container();
+    gap: 60px;
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    .profile-content {
+        @include flexCenter();
+        gap: 50px;
+
+        .profile-picture {
+            width: 250px !important;
+            height: 250px !important;
+            object-fit: cover;
+        }
+
+        .profile-text {
+            @include flexStart();
+            flex-direction: column;
+            gap: 10px;
+            font-size: 1.3rem;
+
+            span {
+                font-weight: 700;
+                margin-right: 15px;
+            }
+
+            p {
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    .delete {
+        width: clamp(250px, 30vw, 500px);
+        height: 40px;
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+}

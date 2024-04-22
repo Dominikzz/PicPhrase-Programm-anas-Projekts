@@ -1,0 +1,222 @@
+
+@import "../assets/global.scss";
+
+.button {
+    @include border();
+    background-color: $green;
+    color: $white;
+    cursor: pointer;
+}
+
+.top-navbar {
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    padding: 20px 20px;
+    @include flexSpaceBetween();
+
+    img {
+        width: 25px;
+    }
+}
+
+.language-switcher {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    padding: 6px 15px;
+    display: inline-block;
+    border-bottom: 1px solid $green;
+    font-family: 'Exo2';
+
+    .current-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        
+        img {
+            width: 20px;
+            margin-right: 8px;
+        }
+
+        .dropDownArrow {
+            margin-left: 5px;
+        }
+    }
+
+    .closed {
+        display: none;
+    }
+  
+    ul {
+      position: absolute;
+      top: 130%;
+      left: 5%;
+      list-style: none;
+      z-index: 1;
+      @include border();
+      background-color: $white;
+  
+      li {
+        padding: 8px 16px;
+        cursor: pointer;
+        transition: 0.1s ease-in-out;
+        
+        .content {
+            display: flex;
+            gap: 8px;
+
+            img {
+                width: 20px;
+            }
+        }
+
+        &.selected {
+            background-color: $green !important;
+            color: $white !important;
+        }
+  
+          &.unselected:hover {
+              background-color: $accent;
+        }
+      }
+    }
+  }
+
+  .navbar {
+    @include flexStart();
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    width: 100%;
+
+    .back {
+        @include flexCenter();
+        gap: 15px;
+        padding: 10px;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+
+        p {
+            font-size: 1.15rem;
+            font-weight: 500;
+        }
+    
+        img {
+            width: 25px;
+        }
+    }
+
+    .back:hover {
+        gap: 22px;
+    }
+  }
+
+  .back-navbar {
+    @include flexCenter();
+    position: absolute;
+    top: 0;
+    border-bottom: 1px solid $green;
+    padding: 20px 20px 0; 
+    width: 90%;
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    .back-button {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 20px; 
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        position: absolute;
+        top: 35px;
+        left: 0;
+    
+        p {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+    
+        img {
+            width: 30px;
+        }
+    
+        &:hover {
+            gap: 22px;
+        }
+      }
+  }
+
+
+  .modal-overlay {
+    @include flexCenter();
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .modal-container {
+        @include flexSpaceBetween();
+        flex-direction: column;
+        width: 50vw;
+        height: 50vh;
+        background-color: $green;
+        padding: 20px 20px 40px;
+        border-radius: 10px;
+
+        .modal-header {
+            @include flexSpaceBetween();
+            width: 100%;
+            padding: 0 15px 10px;
+            border-bottom: 1px solid $white;
+
+            p {
+                font-size: 1.55rem;
+                font-weight: 600;
+                color: $white;
+            }
+
+            img {
+                width: 50px;
+                cursor: pointer;
+            }
+        }
+
+        button {
+            @include border();
+            background-color: $orange;
+            color: $white;
+            padding: 15px 20px;
+            width: 40%;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+            margin-top: 20px;
+
+            &:hover {
+                background-color: red;
+            }
+        }
+
+        .pair {
+            @include flexCenterCollumn();
+
+            img {
+                width: 40px;
+            }
+
+            p {
+                color: $white;
+            }
+        }
+    }
+  }
